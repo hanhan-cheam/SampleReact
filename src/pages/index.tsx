@@ -47,6 +47,14 @@ const Home = () => {
     };
   }
 
+  // const debouncedUpdateDelayed = debounce(
+  //   (inputValue: number) => {
+  //     console.log("debounce")
+  //     setValue(isNaN(inputValue) ? 0 : inputValue);
+  //   },
+  //   1000
+  // );
+
   const debouncedUpdateDelayed = useMemo(
     () =>
       debounce(
