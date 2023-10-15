@@ -1,5 +1,5 @@
 import { Box, Grid, TextField } from "@mui/material"
-import { useCallback, useEffect, useState } from "react"
+import { useCallback, useEffect, useMemo, useState } from "react"
 import { useTheme } from '@mui/material/styles'
 
 type people = {
@@ -47,18 +47,20 @@ const Home = () => {
     };
   }
 
+  const debouncedUpdateDelayed = useMemo(
+    () =>
+      debounce(
+         (
+          inputValue: number
+        ) => {
+          console.log("debounce", inputValue)
+          setValue(isNaN(inputValue) ? 0 : inputValue);
+        },
+        1000
+      ),
+    []
 
-
-  
-
-  const debouncedUpdateDelayed = debounce(
-    (inputValue: number) => {
-      console.log("debounce")
-      setValue(isNaN(inputValue) ? 0 : inputValue);
-    },
-    1000
-  );
-
+  )
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     
     const value = parseInt(event.target.value)
