@@ -97,7 +97,7 @@ export const SpecialBoxV2 = ({
             position: 'relative' 
           }}>        
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-              <Box sx={{   position: 'absolute' , top: 0, left: 0}} >{title}</Box>
+              <Box sx={{ position: 'absolute' , top: 0, left: 0 }} >{title}</Box>
               <Box>
                 <TextField 
                     id="input"

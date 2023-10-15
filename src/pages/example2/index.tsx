@@ -3,20 +3,8 @@ import {  SpecialBoxDetailInput, SpecialBoxV2, TSmallBoxDetail, TSpecialBoxProps
 import { Box, Button, useTheme } from "@mui/material"
 import { ChangeEvent, useState } from "react"
 
-
-
-
-
-
-const Page1 = () => {
+const Example2 = () => {
   const isDarkTheme = useTheme().palette.mode === 'dark'
-
-  const [boxList, setBoxList] = useState<TBoxDetail[]>([
-    {
-      id: 1,
-      name: 'HAN1'
-    }
-  ])
 
   const [bigBox, setBigBox] = useState<SpecialBoxDetailInput[]>([])
   
@@ -32,9 +20,7 @@ const Page1 = () => {
     ])
   }
 
-  //#region //TODO
-
-
+  //#region 
 
   const handleTextFieldChange = (event: React.ChangeEvent<HTMLInputElement>, title: string) => {
     const value = parseInt(event.target.value)
@@ -75,4 +61,4 @@ const Page1 = () => {
 
 }
 
-export default Page1
+export default Example2

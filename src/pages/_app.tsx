@@ -12,8 +12,6 @@ export default function App({ Component, pageProps }: AppProps) {
 
   const router = useRouter();
 
-  
-
   const theme = createTheme({
     palette: {
       mode: mode,
@@ -33,12 +31,12 @@ export default function App({ Component, pageProps }: AppProps) {
     router.push('/');
   }
 
-  const goSecondPage = () => {
-    router.push('/page2');
+  const goExample1Page = () => {
+    router.push('/example1');
   }
 
-  const goThirdPage = () => {
-    router.push('/page3');
+  const goExample2Page = () => {
+    router.push('/example2');
   }
 
   
@@ -67,8 +65,8 @@ export default function App({ Component, pageProps }: AppProps) {
 
           <Box>
             <Button variant="contained" onClick={goFirstPage} sx={{ color: mode === 'light' ? 'black' : 'white'}}>Index Page</Button>
-            <Button variant="contained" onClick={goSecondPage} sx={{ color: mode === 'light' ? 'black' : 'white'}}>Second Page</Button>
-            <Button variant="contained" onClick={goThirdPage} sx={{ color: mode === 'light' ? 'black' : 'white'}}>Third Page</Button>
+            <Button variant="contained" onClick={goExample1Page} sx={{ color: mode === 'light' ? 'black' : 'white'}}>Example 1</Button>
+            <Button variant="contained" onClick={goExample2Page} sx={{ color: mode === 'light' ? 'black' : 'white'}}>Example 2</Button>
           </Box>
     </Box>
     </div>
