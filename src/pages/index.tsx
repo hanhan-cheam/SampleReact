@@ -51,7 +51,7 @@ const Home = () => {
 
   
 
-  const debouncedUpdateDayFromDelayed = debounce(
+  const debouncedUpdateDelayed = debounce(
     (inputValue: number) => {
       console.log("debounce")
       setValue(isNaN(inputValue) ? 0 : inputValue);
@@ -74,7 +74,7 @@ const Home = () => {
 
     setInputValue(isNaN(value) ? 0 : value)
 
-    debouncedUpdateDayFromDelayed(value)
+    debouncedUpdateDelayed(value)
 
   }
   

@@ -16,10 +16,10 @@ export type TSpecialBox = {
 
 
 export const SpecialBox = ({
-    boxContent = []
+    boxContent,
 }: TSpecialBox) => {
 
-    const [detail , setDetail] = useState<TBoxDetail[]>(boxContent)
+
     const [inputValue, setInputValue] = useState<number>(0)
     const [value, setValue] = useState<number>(0)
 
@@ -34,7 +34,7 @@ export const SpecialBox = ({
       };
     }
   
-    const debouncedUpdateDayFromDelayed = debounce(
+    const debouncedUpdateDelayed = debounce(
       (inputValue: number) => {
         console.log("debounce")
         setValue(isNaN(inputValue) ? 0 : inputValue);
@@ -50,20 +50,15 @@ export const SpecialBox = ({
         return
       }
       setInputValue(isNaN(value) ? 0 : value)
-      debouncedUpdateDayFromDelayed(value)
+      debouncedUpdateDelayed(value)
   
     }
-    
-
-
-
-
     
     return (
 
         <Box sx={{
-            width: '320px',
-            height: '320px',
+            width: '500px',
+            height: '500px',
             border: 1,
             fontSize: '50px',
             display: 'flex',
@@ -110,12 +105,12 @@ export const SpecialBox = ({
                 
               }}
             > 
-                {detail.map((personId , index) => {          
+                {boxContent.map((x , index) => {          
                   return (
                     <Box  key={index} sx={{ 
-                      fontSize: '20px', border: 'solid', width: '50px', height: '50px', textAlign: 'center', paddingTop: '10px'
+                      fontSize: '20px', border: 'solid', width: '100px', height: '100px', textAlign: 'center', paddingTop: '10px'
                     }}>
-                      {personId.name}
+                      {x.name}
                     </Box>
                   )
                 })}

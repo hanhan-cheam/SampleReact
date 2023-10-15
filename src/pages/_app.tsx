@@ -34,9 +34,14 @@ export default function App({ Component, pageProps }: AppProps) {
   }
 
   const goSecondPage = () => {
-    router.push('/inbound');
+    router.push('/page2');
   }
 
+  const goThirdPage = () => {
+    router.push('/page3');
+  }
+
+  
   return <ThemeProvider theme={theme}>
     <CssBaseline />
  
@@ -61,8 +66,9 @@ export default function App({ Component, pageProps }: AppProps) {
           </Box>
 
           <Box>
-            <Button variant="contained" onClick={goFirstPage} sx={{ color: mode === 'light' ? 'black' : 'white'}}>First Page</Button>
+            <Button variant="contained" onClick={goFirstPage} sx={{ color: mode === 'light' ? 'black' : 'white'}}>Index Page</Button>
             <Button variant="contained" onClick={goSecondPage} sx={{ color: mode === 'light' ? 'black' : 'white'}}>Second Page</Button>
+            <Button variant="contained" onClick={goThirdPage} sx={{ color: mode === 'light' ? 'black' : 'white'}}>Third Page</Button>
           </Box>
     </Box>
     </div>
