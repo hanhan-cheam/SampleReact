@@ -65,7 +65,7 @@ const Home = () => {
     
     const value = parseInt(event.target.value)
 
-    console.log(value)
+
 
     if(value > 100){
       event.preventDefault()
