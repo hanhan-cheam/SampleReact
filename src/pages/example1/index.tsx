@@ -9,9 +9,12 @@ const Example1 = () => {
   const [boxList, setBoxList] = useState<TBoxDetail[]>([])
   
   const handleAddBox = () => {
-    const currenntTitle =  boxList.length > 0 ? `Sample ${boxList.length + 1}`  : `Sample 1`
+
+    const boxListTitle = boxList.map((x) => parseInt(x.title));
+    const currentMax = boxList.length > 0 ? (Math.max(...boxListTitle) + 1) : 1
+ 
     const newBoxDetail = {
-      title: currenntTitle,   
+      title: currentMax.toString(),   
       inputValue: 0,
     }
     setBoxList((prev)=> [
@@ -19,6 +22,14 @@ const Example1 = () => {
       newBoxDetail
     ])
   }
+
+
+  const handleDeleteBox = (title: string) => {
+
+    const updatedBoxList = boxList.filter(x => x.title !== title)
+    setBoxList(updatedBoxList)
+  }
+  
 
 
   const handleTextFieldChange = (event: React.ChangeEvent<HTMLInputElement>, title: string) => {
@@ -38,26 +49,31 @@ const Example1 = () => {
   }
 
   return (
-      <>
+      <> 
+       
         <Button onClick={handleAddBox} variant="contained" sx={{ color: isDarkTheme ? 'white' : 'black'}}>ADD BOX</Button>
           <Box
             sx={{
               display: 'grid',
               gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', 
-              gap: 4, 
-              position: "absolute", 
+              gap: 4,   
             }}
           > 
             {boxList.map((x) => {          
               return (
-                <SpecialBox   
-                  key={x.title}
-                  title={x.title}         
-                  inputValue={x.inputValue}                 
-                  onTextFieldChange={(e) => {
-                    handleTextFieldChange(e, x.title)
-                  }}    
-                />
+               
+               <>
+                  <SpecialBox   
+                    key={x.title}
+                    title={x.title}         
+                    inputValue={x.inputValue}                 
+                    onTextFieldChange={(e) => {
+                      handleTextFieldChange(e, x.title)
+                    }}    
+                    onDelete={handleDeleteBox}
+                  
+                  />
+               </>
               )
             })} 
           </Box> 
