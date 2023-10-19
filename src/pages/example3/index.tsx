@@ -148,7 +148,7 @@ const Example3 = () => {
      
         setInputFields(clearsFieldsValue)
 
-   
+        alert("UPDATE SUCCESS")
 
     }
 
