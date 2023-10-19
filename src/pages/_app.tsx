@@ -39,6 +39,11 @@ export default function App({ Component, pageProps }: AppProps) {
     router.push('/example2');
   }
 
+  const goExample3Page = () => {
+    router.push('/example3');
+  }
+  
+
   
   return <ThemeProvider theme={theme}>
     <CssBaseline />
@@ -67,6 +72,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <Button variant="contained" onClick={goFirstPage} sx={{ color: mode === 'light' ? 'black' : 'white'}}>Index Page</Button>
             <Button variant="contained" onClick={goExample1Page} sx={{ color: mode === 'light' ? 'black' : 'white'}}>Example 1</Button>
             <Button variant="contained" onClick={goExample2Page} sx={{ color: mode === 'light' ? 'black' : 'white'}}>Example 2</Button>
+            <Button variant="contained" onClick={goExample3Page} sx={{ color: mode === 'light' ? 'black' : 'white'}}>Example 3</Button>
           </Box>
     </Box>
     </div>

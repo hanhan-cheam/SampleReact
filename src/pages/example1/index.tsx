@@ -64,7 +64,7 @@ const Example1 = () => {
                
                <>
                   <SpecialBox   
-                    key={x.title}
+                    name={x.title}
                     title={x.title}         
                     inputValue={x.inputValue}                 
                     onTextFieldChange={(e) => {
