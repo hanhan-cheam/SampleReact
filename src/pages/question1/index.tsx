@@ -2,13 +2,15 @@ import { SpecialBox, TBoxDetail, TSpecialBox } from "@/components/common/Special
 import {  SpecialBoxDetailInput, SpecialBoxV2, TSmallBoxDetail, TSpecialBoxProps } from "@/components/common/SpecialBox/SpecialBoxV2"
 import { ChangeEvent, useState } from "react"
 import { InputFieldsMapper, TFields } from "./components/inputFieldsMapper"
-
+import SearchIcon from '@mui/icons-material/Search';
 import InventoryIcon from '@mui/icons-material/Inventory'
 import ListAltIcon from '@mui/icons-material/ListAlt'
 import ViewModuleIcon from '@mui/icons-material/ViewModule'
 import {
     Box,
     Button,
+  IconButton,
+  InputBase,
   Paper,
   Table,
   TableBody,
@@ -53,7 +55,7 @@ const defaultFields: TFields[] = [
 ] 
 
 
-const Example3 = () => {
+const Question1 = () => {
 
     const [inputFields, setInputFields] = useState<TFields[]>(defaultFields)
 
@@ -167,20 +169,17 @@ const Example3 = () => {
           })
        
           setInputFields(updatedFields)
-
-
-       
     }
     
-
     return (
         <Box>
+            
             <Box sx={{
                 display: 'flex',
                 flexDirection: 'row',
                 gap: '20px'
             }}>
-                {inputFields.map((x,) => {        
+                {inputFields.map((x) => {        
                   
         
                     return (               
@@ -197,13 +196,14 @@ const Example3 = () => {
             </Box>
 
 
-        
+     
             <TableContainer
                 component={Paper}
                 sx={{
-                position: 'relative',
-                minHeight: 250,
-                maxHeight: 480,
+                    marginTop: '20px',
+                    position: 'relative',
+                    minHeight: 250,
+                    maxHeight: 480,
                 }}
             >
             
@@ -258,4 +258,4 @@ const Example3 = () => {
     
 }
 
-export default Example3
+export default Question1

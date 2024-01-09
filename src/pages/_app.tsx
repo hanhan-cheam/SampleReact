@@ -27,24 +27,14 @@ export default function App({ Component, pageProps }: AppProps) {
     setMode('light')
   }
 
-  const goFirstPage = () => {
-    router.push('/');
+  const goQuestion1Page = () => {
+    router.push('/question1');
   }
 
-  const goExample1Page = () => {
-    router.push('/example1');
+  const goQuestion2Page = () => {
+    router.push('/question2');
   }
 
-  const goExample2Page = () => {
-    router.push('/example2');
-  }
-
-  const goExample3Page = () => {
-    router.push('/example3');
-  }
-  
-
-  
   return <ThemeProvider theme={theme}>
     <CssBaseline />
  
@@ -59,20 +49,21 @@ export default function App({ Component, pageProps }: AppProps) {
           paddingTop:  '2.5rem',
           justifyContent: 'space-between'
         }}> 
-          <Box>
+          {/* <Box>
             <Button variant="contained" onClick={changeToDarkMode} sx={{ color: mode === 'light' ? 'black' : 'white'}}>
               Dark Mode
             </Button>
             <Button variant="contained" onClick={changeToLightMode} sx={{ color: mode === 'light' ? 'black' : 'white'}}>
               Light Mode
             </Button>
-          </Box>
+          </Box> */}
 
           <Box>
-            <Button variant="contained" onClick={goFirstPage} sx={{ color: mode === 'light' ? 'black' : 'white'}}>Index Page</Button>
-            <Button variant="contained" onClick={goExample1Page} sx={{ color: mode === 'light' ? 'black' : 'white'}}>Example 1</Button>
-            <Button variant="contained" onClick={goExample2Page} sx={{ color: mode === 'light' ? 'black' : 'white'}}>Example 2</Button>
-            <Button variant="contained" onClick={goExample3Page} sx={{ color: mode === 'light' ? 'black' : 'white'}}>Example 3</Button>
+           
+           
+            <Button variant="contained" onClick={goQuestion1Page} sx={{ color: mode === 'light' ? 'black' : 'white'}}>Question 1</Button>
+            <Button variant="contained" onClick={goQuestion2Page} sx={{ color: mode === 'light' ? 'black' : 'white'}}>Question 2</Button>
+         
           </Box>
     </Box>
     </div>
