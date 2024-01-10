@@ -7,12 +7,9 @@ export type TFields = {
     value: string
 }
   
-
 export type TInputFIelds = {
     onTextFieldChange?: (inputValue: ChangeEvent<HTMLInputElement>, key: string) => void  
-  
 } & TFields
-
 
 export const InputFieldsMapper = ({
     onTextFieldChange,
@@ -20,13 +17,10 @@ export const InputFieldsMapper = ({
     label,
     value,
   }: TInputFIelds) => {
-
-
-
     return  <>
-
-        <TextField
-            
+        <TextField  
+            helperText={value === '' ? 'required' : ''}
+            error={value === ''}
             disabled={false}
             id={name}
             label={label}
@@ -38,23 +32,11 @@ export const InputFieldsMapper = ({
             shrink: true,
             }}
             onChange={(event: ChangeEvent<HTMLInputElement>) =>{
-
-        
                 if(onTextFieldChange){
                     onTextFieldChange(event, name)
                 }
             }
-                    
         }
         />
-    
-    </>
-       
-    
- 
-
-
-   
-          
-     
+    </>   
 }
