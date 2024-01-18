@@ -10,7 +10,7 @@ const Question1 = () => {
     const [answer, setAnswer] = useState<number>(0)
     
     const handleCalculate = () => {
-        console.log("value", inputValue)
+        
 
         // TODO when click sum get the number from the digit field, remove the odd number and then count the sum of each character
         // TODO example user input 54321, remove odd number 5, 3, 1 ,left 4, 2, so result of 4 + 2 = 6
